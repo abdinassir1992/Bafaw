@@ -3,364 +3,369 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Milwaukee Somali Bantu Community | Advocacy & Services</title>
-  <meta name="description" content="Milwaukee Somali Bantu Community: human rights advocacy and social services including sports, resettlement, and community programs." />
-  <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a33;
-      --text:#eaf0ff;
-      --muted:#b9c6e6;
-      --accent:#55d6ff;
-      --accent2:#86efac;
-      --line:rgba(255,255,255,.10);
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --radius:18px;
-      --max:1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 900px at 15% 10%, rgba(85,214,255,.20), transparent 55%),
-                                   radial-gradient(1000px 700px at 90% 20%, rgba(134,239,172,.14), transparent 50%),
-                                   var(--bg);
-              color:var(--text); font-family:var(--font); line-height:1.55;}
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:10px 0;
-    }
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background:linear-gradient(135deg, rgba(85,214,255,.9), rgba(134,239,172,.85));
-      box-shadow:0 12px 30px rgba(85,214,255,.18);
-    }
-    .brand h1{font-size:16px; margin:0; letter-spacing:.2px}
-    .brand small{display:block; color:var(--muted); margin-top:2px; font-size:12px}
-    nav{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
-    nav a{
-      padding:10px 12px; border:1px solid var(--line); border-radius:999px;
-      text-decoration:none; color:var(--muted);
-      transition:.15s ease;
-    }
-    nav a:hover{border-color:rgba(85,214,255,.45); color:var(--text)}
-    .btn{
-      background:linear-gradient(135deg, rgba(85,214,255,.95), rgba(134,239,172,.88));
-      color:#071018; border:none; padding:10px 14px; border-radius:999px;
-      text-decoration:none; font-weight:700; box-shadow:0 14px 40px rgba(85,214,255,.16);
-      display:inline-flex; gap:8px; align-items:center;
-    }
-    .hero{
-      margin-top:16px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius:var(--radius);
-      padding:34px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero:before{
-      content:""; position:absolute; inset:-120px -80px auto auto; width:360px; height:360px;
-      background:radial-gradient(circle at 30% 30%, rgba(85,214,255,.35), transparent 60%);
-      filter:blur(2px);
-    }
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px}
-    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
-    .kicker{color:var(--accent); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:12px}
-    .hero h2{font-size:40px; line-height:1.1; margin:10px 0 10px}
-    @media (max-width: 520px){ .hero h2{font-size:32px} }
-    .hero p{color:var(--muted); margin:0 0 16px; font-size:16px}
-    .cta-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:18px}
-    .ghost{
-      border:1px solid var(--line); color:var(--text); background:transparent;
-      padding:10px 14px; border-radius:999px; text-decoration:none; font-weight:650;
-    }
-    .stats{
-      display:grid; gap:12px;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-    .stat{
-      border:1px solid var(--line);
-      background:rgba(15,26,51,.55);
-      border-radius:16px;
-      padding:14px;
-    }
-    .stat b{display:block; font-size:18px}
-    .stat span{color:var(--muted); font-size:12px}
-    section{margin-top:22px}
-    .section-card{
-      border:1px solid var(--line);
-      background:rgba(15,26,51,.55);
-      border-radius:var(--radius);
-      padding:24px;
-      box-shadow:0 18px 50px rgba(0,0,0,.20);
-    }
-    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
-    .section-title h3{margin:0; font-size:22px}
-    .section-title p{margin:0; color:var(--muted); font-size:14px}
-    .grid3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px}
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px; border-radius:999px; border:1px solid var(--line);
-      color:var(--muted); font-size:13px; margin:6px 8px 0 0;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:rgba(11,18,32,.35);
-    }
-    .card h4{margin:0 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px}
-    .people{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px}
-    @media (max-width: 900px){ .people{grid-template-columns:1fr} }
-    .person{
-      display:flex; gap:12px; align-items:flex-start;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
-      background:rgba(11,18,32,.35);
-    }
-    .avatar{
-      width:42px; height:42px; border-radius:14px;
-      background:linear-gradient(135deg, rgba(85,214,255,.25), rgba(134,239,172,.22));
-      border:1px solid rgba(255,255,255,.10);
-      flex:0 0 auto;
-    }
-    .person b{display:block}
-    .person small{color:var(--muted)}
-    .footer{
-      margin:24px 0 10px;
-      color:var(--muted);
-      font-size:13px;
-      display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
-      border-top:1px solid var(--line);
-      padding-top:16px;
-    }
-    .form{
-      display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px;
-    }
-    @media (max-width: 900px){ .form{grid-template-columns:1fr} }
-    input, textarea{
-      width:100%; padding:12px 12px; border-radius:14px;
-      border:1px solid var(--line); background:rgba(11,18,32,.55); color:var(--text);
-      outline:none;
-    }
-    textarea{min-height:120px; resize:vertical}
-    .note{color:var(--muted); font-size:12px; margin-top:10px}
-  </style>
+  <title>Milwaukee Somali Bantu Community Organization</title>
+  <meta name="description" content="A nonprofit serving the Somali Bantu community in Milwaukee through human rights advocacy and social services." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="brand" href="#top">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>Milwaukee Somali Bantu Community</h1>
-          <small>Human rights advocacy • Social services • Community programs</small>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="dot"></span>
+        <span data-i18n="tagline">Unity • Justice • Dignity</span>
+      </div>
+
+      <div class="topbar-right">
+        <button class="lang-btn" id="lang-en" aria-label="English">EN</button>
+        <button class="lang-btn" id="lang-so" aria-label="Somali">SO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Home">
+        <div class="brand-mark" aria-hidden="true">MSBC</div>
+        <div class="brand-text">
+          <div class="brand-title" data-i18n="orgName">Milwaukee Somali Bantu Community Organization</div>
+          <div class="brand-sub" data-i18n="orgType">Nonprofit • Milwaukee, Wisconsin</div>
         </div>
       </a>
 
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#services">Programs</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#get-involved">Get involved</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#donate">Donate</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#programs" data-i18n="navPrograms">Programs</a>
+        <a href="#board" data-i18n="navBoard">Board</a>
+        <a href="#contact" class="nav-cta" data-i18n="navContact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="top" class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">Milwaukee, Wisconsin</div>
-          <h2>Supporting the Somali Bantu community with dignity, justice, and opportunity.</h2>
-          <p>
-            We provide trusted community support and services—from resettlement and family resources to youth sports and human rights advocacy.
-            Our mission is to strengthen families, protect rights, and build a safer, healthier future for all.
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-left">
+        <div class="pill" data-i18n="pill">Serving the Somali Bantu community in Milwaukee</div>
+
+        <h1 class="hero-title" data-i18n="heroTitle">
+          Human rights advocacy and trusted community services — built with dignity.
+        </h1>
+
+        <p class="hero-desc" data-i18n="heroDesc">
+          We support families through resettlement help, youth sports, referrals, case support, and community programs.
+          We also advocate for civil rights, fair access, and respect for every person.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact" data-i18n="btnGetHelp">Get Help</a>
+          <a class="btn ghost" href="#programs" data-i18n="btnExplore">Explore Programs</a>
+        </div>
+
+        <div class="trust">
+          <div class="trust-item">
+            <div class="trust-num">Milwaukee</div>
+            <div class="trust-label" data-i18n="trust1">Community-based nonprofit</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num" data-i18n="trust2Num">Support</div>
+            <div class="trust-label" data-i18n="trust2">Resettlement & services</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num" data-i18n="trust3Num">Advocacy</div>
+            <div class="trust-label" data-i18n="trust3">Human rights & protection</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hero-right">
+        <div class="card">
+          <div class="card-head">
+            <h2 class="card-title" data-i18n="cardTitle">Our Flags</h2>
+            <p class="card-sub" data-i18n="cardSub">Somalia • United States • Wisconsin</p>
+          </div>
+
+          <div class="flags">
+            <!-- Somalia flag (SVG) -->
+            <div class="flag-wrap" title="Somalia Flag" aria-label="Somalia flag">
+              <svg viewBox="0 0 3 2" role="img" aria-hidden="true" class="flag">
+                <rect width="3" height="2" fill="#4189DD"/>
+                <!-- Star -->
+                <g transform="translate(1.5 1) scale(0.55)">
+                  <polygon fill="#fff" points="0,-1 0.224,-0.309 0.951,-0.309 0.363,0.118 0.588,0.809 0,0.382 -0.588,0.809 -0.363,0.118 -0.951,-0.309 -0.224,-0.309"/>
+                </g>
+              </svg>
+              <div class="flag-cap" data-i18n="flagSomalia">Somalia</div>
+            </div>
+
+            <!-- USA flag (stylized SVG) -->
+            <div class="flag-wrap" title="United States Flag" aria-label="United States flag">
+              <svg viewBox="0 0 190 100" role="img" aria-hidden="true" class="flag">
+                <rect width="190" height="100" fill="#fff"/>
+                <!-- red stripes -->
+                <g fill="#B22234">
+                  <rect y="0"  width="190" height="7.69"/>
+                  <rect y="15.38" width="190" height="7.69"/>
+                  <rect y="30.76" width="190" height="7.69"/>
+                  <rect y="46.14" width="190" height="7.69"/>
+                  <rect y="61.52" width="190" height="7.69"/>
+                  <rect y="76.9" width="190" height="7.69"/>
+                  <rect y="92.28" width="190" height="7.72"/>
+                </g>
+                <!-- canton -->
+                <rect width="76" height="53.85" fill="#3C3B6E"/>
+                <!-- simple star field dots -->
+                <g fill="#fff" opacity="0.95">
+                  <!-- 9 rows of dots -->
+                  <script type="application/ecmascript"><![CDATA[
+                    // (Intentionally blank: SVG is static; dots defined below for broad compatibility.)
+                  ]]></script>
+                  <!-- Dots grid -->
+                  <!-- rows -->
+                  <!-- row 1 -->
+                  <circle cx="7" cy="6" r="1.4"/><circle cx="16" cy="6" r="1.4"/><circle cx="25" cy="6" r="1.4"/><circle cx="34" cy="6" r="1.4"/><circle cx="43" cy="6" r="1.4"/><circle cx="52" cy="6" r="1.4"/><circle cx="61" cy="6" r="1.4"/><circle cx="70" cy="6" r="1.4"/>
+                  <!-- row 2 -->
+                  <circle cx="11.5" cy="12" r="1.4"/><circle cx="20.5" cy="12" r="1.4"/><circle cx="29.5" cy="12" r="1.4"/><circle cx="38.5" cy="12" r="1.4"/><circle cx="47.5" cy="12" r="1.4"/><circle cx="56.5" cy="12" r="1.4"/><circle cx="65.5" cy="12" r="1.4"/>
+                  <!-- row 3 -->
+                  <circle cx="7" cy="18" r="1.4"/><circle cx="16" cy="18" r="1.4"/><circle cx="25" cy="18" r="1.4"/><circle cx="34" cy="18" r="1.4"/><circle cx="43" cy="18" r="1.4"/><circle cx="52" cy="18" r="1.4"/><circle cx="61" cy="18" r="1.4"/><circle cx="70" cy="18" r="1.4"/>
+                  <!-- row 4 -->
+                  <circle cx="11.5" cy="24" r="1.4"/><circle cx="20.5" cy="24" r="1.4"/><circle cx="29.5" cy="24" r="1.4"/><circle cx="38.5" cy="24" r="1.4"/><circle cx="47.5" cy="24" r="1.4"/><circle cx="56.5" cy="24" r="1.4"/><circle cx="65.5" cy="24" r="1.4"/>
+                  <!-- row 5 -->
+                  <circle cx="7" cy="30" r="1.4"/><circle cx="16" cy="30" r="1.4"/><circle cx="25" cy="30" r="1.4"/><circle cx="34" cy="30" r="1.4"/><circle cx="43" cy="30" r="1.4"/><circle cx="52" cy="30" r="1.4"/><circle cx="61" cy="30" r="1.4"/><circle cx="70" cy="30" r="1.4"/>
+                  <!-- row 6 -->
+                  <circle cx="11.5" cy="36" r="1.4"/><circle cx="20.5" cy="36" r="1.4"/><circle cx="29.5" cy="36" r="1.4"/><circle cx="38.5" cy="36" r="1.4"/><circle cx="47.5" cy="36" r="1.4"/><circle cx="56.5" cy="36" r="1.4"/><circle cx="65.5" cy="36" r="1.4"/>
+                  <!-- row 7 -->
+                  <circle cx="7" cy="42" r="1.4"/><circle cx="16" cy="42" r="1.4"/><circle cx="25" cy="42" r="1.4"/><circle cx="34" cy="42" r="1.4"/><circle cx="43" cy="42" r="1.4"/><circle cx="52" cy="42" r="1.4"/><circle cx="61" cy="42" r="1.4"/><circle cx="70" cy="42" r="1.4"/>
+                  <!-- row 8 -->
+                  <circle cx="11.5" cy="48" r="1.4"/><circle cx="20.5" cy="48" r="1.4"/><circle cx="29.5" cy="48" r="1.4"/><circle cx="38.5" cy="48" r="1.4"/><circle cx="47.5" cy="48" r="1.4"/><circle cx="56.5" cy="48" r="1.4"/><circle cx="65.5" cy="48" r="1.4"/>
+                </g>
+              </svg>
+              <div class="flag-cap" data-i18n="flagUSA">United States</div>
+            </div>
+
+            <!-- Wisconsin flag (image file you add) -->
+            <div class="flag-wrap" title="Wisconsin Flag" aria-label="Wisconsin flag">
+              <img class="flag img-flag" src="assets/wisconsin-flag.png" alt="Wisconsin flag" />
+              <div class="flag-cap" data-i18n="flagWI">Wisconsin</div>
+              <div class="note" data-i18n="wiNote">Add file: assets/wisconsin-flag.png</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <div class="mini">
+              <div class="mini-title" data-i18n="focusTitle">Focus Areas</div>
+              <ul class="mini-list">
+                <li data-i18n="focus1">Human Rights Advocacy</li>
+                <li data-i18n="focus2">Resettlement & Family Support</li>
+                <li data-i18n="focus3">Youth Sports & Mentorship</li>
+                <li data-i18n="focus4">Community Services & Referrals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="aboutTitle">About Us</h2>
+        <p data-i18n="aboutDesc">
+          We are a Milwaukee-based nonprofit dedicated to serving the Somali Bantu community through practical support,
+          protection of rights, and community-led programs.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="info-card">
+          <h3 data-i18n="missionTitle">Mission</h3>
+          <p data-i18n="missionDesc">
+            To strengthen and empower the Somali Bantu community in Milwaukee through human rights advocacy,
+            social services, and programs that build opportunity.
           </p>
-
-          <div>
-            <span class="pill">Human Rights Advocacy</span>
-            <span class="pill">Resettlement Support</span>
-            <span class="pill">Youth & Sports</span>
-            <span class="pill">Family & Children Services</span>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn" href="#get-involved">Volunteer / Partner</a>
-            <a class="ghost" href="#services">See our programs</a>
-          </div>
         </div>
-
-        <div class="stats" aria-label="Quick highlights">
-          <div class="stat">
-            <b>Community Services</b>
-            <span>Support for families, youth, and newcomers</span>
-          </div>
-          <div class="stat">
-            <b>Advocacy</b>
-            <span>Human rights, community protection, and voice</span>
-          </div>
-          <div class="stat">
-            <b>Sports Programs</b>
-            <span>Youth development through teamwork</span>
-          </div>
-          <div class="stat">
-            <b>Resettlement Help</b>
-            <span>Guidance navigating schools, jobs, resources</span>
-          </div>
+        <div class="info-card">
+          <h3 data-i18n="visionTitle">Vision</h3>
+          <p data-i18n="visionDesc">
+            A safe, thriving, and respected community where families have access, dignity, and a strong voice.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3 data-i18n="valuesTitle">Values</h3>
+          <p data-i18n="valuesDesc">
+            Integrity, service, unity, accountability, and respect for every person.
+          </p>
         </div>
       </div>
-    </main>
+    </div>
+  </section>
 
-    <section id="about" class="section-card">
-      <div class="section-title">
-        <h3>About us</h3>
-        <p>Rooted in community. Focused on solutions.</p>
-      </div>
-      <p style="color:var(--muted); margin:0;">
-        The Milwaukee Somali Bantu Community organization is committed to empowering Somali Bantu families and individuals through
-        advocacy, social services, and community programming. We collaborate with local partners to connect residents to resources,
-        strengthen youth opportunities, and protect the rights and well-being of our community.
-      </p>
-    </section>
-
-    <section id="services" class="section-card">
-      <div class="section-title">
-        <h3>Programs & services</h3>
-        <p>What we do</p>
+  <!-- Programs -->
+  <section id="programs" class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="programsTitle">Programs & Services</h2>
+        <p data-i18n="programsDesc">
+          We provide support across multiple areas. If you need help, contact us and we will guide you to the right service.
+        </p>
       </div>
 
-      <div class="grid3">
-        <div class="card">
-          <h4>Human Rights Advocacy</h4>
-          <p>Support, awareness, and community representation to protect dignity and rights.</p>
+      <div class="grid-3">
+        <div class="program-card">
+          <h3 data-i18n="prog1Title">Human Rights Advocacy</h3>
+          <p data-i18n="prog1Desc">Support, reporting help, referrals, and community education to protect civil rights and dignity.</p>
         </div>
-        <div class="card">
-          <h4>Resettlement & Navigation</h4>
-          <p>Help connecting to housing resources, school systems, health services, and employment pathways.</p>
+        <div class="program-card">
+          <h3 data-i18n="prog2Title">Resettlement Support</h3>
+          <p data-i18n="prog2Desc">Guidance with resources, interpretation support, local referrals, and community navigation.</p>
         </div>
-        <div class="card">
-          <h4>Youth Sports & Development</h4>
-          <p>Sports programs that build leadership, confidence, and healthy routines for youth.</p>
+        <div class="program-card">
+          <h3 data-i18n="prog3Title">Community Services</h3>
+          <p data-i18n="prog3Desc">Case support, transportation resource guidance, forms help, and local service connections.</p>
         </div>
-        <div class="card">
-          <h4>Family & Children Support</h4>
-          <p>Family guidance, children services coordination, and support for parents and caregivers.</p>
+        <div class="program-card">
+          <h3 data-i18n="prog4Title">Youth Sports</h3>
+          <p data-i18n="prog4Desc">Sports programs and mentorship that promote health, leadership, teamwork, and confidence.</p>
         </div>
-        <div class="card">
-          <h4>Community Services</h4>
-          <p>Community support, referrals, translation support (if available), and local resource connection.</p>
+        <div class="program-card">
+          <h3 data-i18n="prog5Title">Family & Children Support</h3>
+          <p data-i18n="prog5Desc">Family-focused services, children support referrals, and youth wellbeing assistance.</p>
         </div>
-        <div class="card">
-          <h4>Programs & Events</h4>
-          <p>Workshops, community meetings, and partnerships that strengthen community unity.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="leadership" class="section-card">
-      <div class="section-title">
-        <h3>Leadership & board</h3>
-        <p>Serving Milwaukee with accountability and transparency</p>
-      </div>
-
-      <div class="people">
-        <div class="person"><div class="avatar"></div><div><b>Mohamed Sidi</b><small>President</small></div></div>
-        <div class="person"><div class="avatar"></div><div><b>Sheikh Abdishakur Ali</b><small>Vice President</small></div></div>
-
-        <div class="person"><div class="avatar"></div><div><b>Engineer Abdinasser Omar</b><small>Secretary</small></div></div>
-        <div class="person"><div class="avatar"></div><div><b>Sheiknoor Adan</b><small>Executive Director</small></div></div>
-
-        <div class="person"><div class="avatar"></div><div><b>Nuurto Jeylani</b><small>Assistant Executive Director</small></div></div>
-        <div class="person"><div class="avatar"></div><div><b>Anab Aden</b><small>Treasury</small></div></div>
-
-        <div class="person"><div class="avatar"></div><div><b>Jafar Hussien</b><small>Program Coordinator</small></div></div>
-        <div class="person"><div class="avatar"></div><div><b>Mohamed Omar</b><small>Assistant Program Coordinator</small></div></div>
-
-        <div class="person"><div class="avatar"></div><div><b>Fatuma Sharif</b><small>Family & Children Coordinator</small></div></div>
-        <div class="person"><div class="avatar"></div><div><b>Muktarhussin</b><small>Spokesperson</small></div></div>
-      </div>
-    </section>
-
-    <section id="get-involved" class="section-card">
-      <div class="section-title">
-        <h3>Get involved</h3>
-        <p>Volunteer • Partner • Sponsor</p>
-      </div>
-
-      <div class="grid3">
-        <div class="card">
-          <h4>Volunteer</h4>
-          <p>Help with events, youth activities, community outreach, and support services.</p>
-        </div>
-        <div class="card">
-          <h4>Partner</h4>
-          <p>We welcome partnerships with schools, nonprofits, clinics, and local organizations.</p>
-        </div>
-        <div class="card">
-          <h4>Sponsor</h4>
-          <p>Support programs like youth sports, community workshops, and resettlement assistance.</p>
+        <div class="program-card">
+          <h3 data-i18n="prog6Title">Community Engagement</h3>
+          <p data-i18n="prog6Desc">Meetings, workshops, outreach, and partnerships that strengthen community voice.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="note">Tip: Add your EIN/501(c)(3) info here later if you want donations to be tax-deductible.</p>
-    </section>
-
-    <section id="donate" class="section-card">
-      <div class="section-title">
-        <h3>Donate</h3>
-        <p>Support programs and services</p>
-      </div>
-      <p style="color:var(--muted); margin:0 0 12px;">
-        Donations help us deliver advocacy and community services. Add your payment link (PayPal, Stripe, Cash App, etc.) when ready.
-      </p>
-      <a class="btn" href="#contact">Request donation info</a>
-    </section>
-
-    <section id="contact" class="section-card">
-      <div class="section-title">
-        <h3>Contact</h3>
-        <p>We’ll respond as soon as possible</p>
+  <!-- Board -->
+  <section id="board" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="boardTitle">Board & Leadership</h2>
+        <p data-i18n="boardDesc">Our leadership team serves the community with transparency, service, and accountability.</p>
       </div>
 
-      <p style="color:var(--muted); margin:0 0 8px;">
-        Add your official email/phone/address here when ready.
-      </p>
+      <div class="board-grid">
+        <div class="board-card">
+          <div class="role" data-i18n="presRole">President</div>
+          <div class="name">Mohamed Sidi</div>
+        </div>
 
-      <!-- Simple mailto form (works without a server) -->
-      <form action="mailto:YOUR_EMAIL_HERE@example.com" method="post" enctype="text/plain">
-        <div class="form">
-          <input name="name" placeholder="Your name" required />
-          <input name="email" type="email" placeholder="Your email" required />
+        <div class="board-card">
+          <div class="role" data-i18n="vpRole">Vice President</div>
+          <div class="name">Sheikh Abdishakur Ali</div>
         </div>
-        <div style="margin-top:12px;">
-          <textarea name="message" placeholder="How can we help?" required></textarea>
-        </div>
-        <div class="cta-row" style="margin-top:12px;">
-          <button class="btn" type="submit">Send message</button>
-          <span class="note">Replace <b>YOUR_EMAIL_HERE@example.com</b> in the code with your organization email.</span>
-        </div>
-      </form>
-    </section>
 
-    <footer class="footer">
-      <div>© <span id="year"></span> Milwaukee Somali Bantu Community. All rights reserved.</div>
+        <div class="board-card">
+          <div class="role" data-i18n="secRole">Secretary</div>
+          <div class="name">Abdinasser Omar</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="edRole">Executive Director</div>
+          <div class="name">Sheiknoor Adan</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="aedRole">Assistant Executive Director</div>
+          <div class="name">Nuurto Jeylani</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="treRole">Treasury</div>
+          <div class="name">Anab Aden</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="pcRole">Program Coordinator</div>
+          <div class="name">Jafar Hussien</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="apcRole">Assistant Program Coordinator</div>
+          <div class="name">Mohamed Omar</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="fcRole">Family & Children Coordinator</div>
+          <div class="name">Fatuma Sharif</div>
+        </div>
+
+        <div class="board-card">
+          <div class="role" data-i18n="spRole">Spokesperson</div>
+          <div class="name">Muktar Hussien</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="contactTitle">Contact</h2>
+        <p data-i18n="contactDesc">
+          Tell us what you need help with. We will respond as soon as possible.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 data-i18n="contactInfoTitle">Organization Info</h3>
+          <p><strong data-i18n="locationLabel">Location:</strong> <span data-i18n="locationValue">Milwaukee, Wisconsin</span></p>
+          <p><strong data-i18n="emailLabel">Email:</strong> yourname@example.org</p>
+          <p><strong data-i18n="phoneLabel">Phone:</strong> (414) 000-0000</p>
+          <p class="small" data-i18n="contactNote">Replace the email/phone with your real nonprofit contact info.</p>
+        </div>
+
+        <form class="form-card" onsubmit="return false;">
+          <label>
+            <span data-i18n="formName">Name</span>
+            <input type="text" placeholder="Your name" />
+          </label>
+          <label>
+            <span data-i18n="formEmail">Email</span>
+            <input type="email" placeholder="you@email.com" />
+          </label>
+          <label>
+            <span data-i18n="formMessage">Message</span>
+            <textarea rows="5" placeholder="How can we help?"></textarea>
+          </label>
+          <button class="btn primary full" type="submit" data-i18n="formBtn">Send Message</button>
+          <p class="small" data-i18n="formHint">This demo form doesn’t send yet. If you want, I’ll connect it to Formspree or your email.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
       <div>
-        <a href="#top" style="text-decoration:none; border-bottom:1px dotted var(--line);">Back to top</a>
+        <div class="footer-title" data-i18n="orgName">Milwaukee Somali Bantu Community Organization</div>
+        <div class="footer-sub" data-i18n="footerSub">Nonprofit • Milwaukee, Wisconsin</div>
       </div>
-    </footer>
-  </div>
+      <div class="footer-links">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#programs" data-i18n="navPrograms">Programs</a>
+        <a href="#board" data-i18n="navBoard">Board</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> <span data-i18n="orgName">Milwaukee Somali Bantu Community Organization</span></span>
+    </div>
+  </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
 
+
+ 

@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milwaukee Somali Bantu Community BAFAW</title>
+<title>Bafaw Milwaukee Somali Bantu Community </title>
 
 <style>
 :root{

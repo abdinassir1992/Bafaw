@@ -1,589 +1,811 @@
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BAFAW Milwaukee Somali Bantu Community</title>
-<meta name="description" content="BAFAW is a Milwaukee-based nonprofit supporting the Somali Bantu community through advocacy and community services." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BAFAW Milwaukee Somali Bantu Community</title>
+  <meta name="description" content="BAFAW — Milwaukee Somali Bantu Community nonprofit providing human rights advocacy and community services including resettlement, youth sports, family support, and community programs." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0b1220;
+      --text:#ECF2FF;
+      --muted:rgba(236,242,255,.74);
 
-<style>
-:root{
-  --ink:#0b1220;
-  --muted:#4b5563;
-  --line:rgba(15,23,42,.10);
-  --card:rgba(255,255,255,.86);
+      --a1:#60A5FA; /* blue */
+      --a2:#34D399; /* green */
+      --a3:#A78BFA; /* purple */
+      --a4:#22D3EE; /* cyan */
+      --a5:#FB7185; /* rose */
 
-  --a:#0ea5e9;  /* sky */
-  --b:#8b5cf6;  /* violet */
-  --c:#22c55e;  /* green */
-  --d:#fb7185;  /* rose */
+      --stroke:rgba(255,255,255,.14);
+      --glass:rgba(255,255,255,.08);
+      --glass2:rgba(255,255,255,.06);
 
-  --radius:22px;
-  --shadow:0 22px 55px rgba(2,6,23,.18);
-  --shadow2:0 16px 36px rgba(2,6,23,.10);
-}
+      --shadow:0 20px 70px rgba(0,0,0,.45);
+      --shadow2:0 12px 36px rgba(0,0,0,.28);
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color:var(--ink);
+      --r:22px;
+      --r2:16px;
+      --max:1160px;
+      --pad:clamp(16px,3.2vw,28px);
 
-  /* NEW premium background */
-  background:
-    radial-gradient(1100px 700px at 10% 10%, rgba(14,165,233,.26), transparent 60%),
-    radial-gradient(900px 650px at 90% 15%, rgba(139,92,246,.22), transparent 58%),
-    radial-gradient(900px 650px at 16% 92%, rgba(34,197,94,.18), transparent 60%),
-    radial-gradient(850px 600px at 92% 88%, rgba(251,113,133,.16), transparent 62%),
-    linear-gradient(180deg, #fbfdff 0%, #f3f6ff 45%, #fbfbff 100%);
-}
+      --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,
+              "Apple Color Emoji","Segoe UI Emoji";
+    }
 
-a{color:inherit;text-decoration:none}
-.container{max-width:1200px;margin:auto;padding:0 18px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1100px 800px at 12% 10%, rgba(96,165,250,.28), transparent 55%),
+        radial-gradient(900px 700px at 92% 18%, rgba(52,211,153,.22), transparent 55%),
+        radial-gradient(900px 700px at 25% 92%, rgba(167,139,250,.18), transparent 55%),
+        radial-gradient(800px 650px at 86% 88%, rgba(34,211,238,.16), transparent 55%),
+        radial-gradient(720px 560px at 52% 22%, rgba(251,113,133,.14), transparent 55%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background: radial-gradient(circle at 1px 1px, rgba(255,255,255,.10) 1px, transparent 1px);
+      background-size:28px 28px;
+      opacity:.10;
+      mask-image: radial-gradient(900px 520px at 22% 8%, #000 45%, transparent 72%);
+    }
 
-/* top gradient bar */
-.top-strip{
-  height:10px;
-  background:linear-gradient(90deg,var(--a),var(--b),var(--c),var(--d),var(--a));
-  box-shadow:0 10px 24px rgba(2,6,23,.10);
-}
+    a{color:inherit;text-decoration:none}
+    .container{
+      width:min(var(--max), calc(100% - (var(--pad)*2)));
+      margin:0 auto;
+    }
 
-/* header */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(10px);
-  background:rgba(255,255,255,.82);
-  border-bottom:1px solid var(--line);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  padding:14px 0;
-}
+    /* top strip */
+    .top-strip{
+      height:6px;
+      background:linear-gradient(90deg,var(--a1),var(--a4),var(--a2),var(--a3),var(--a5));
+      box-shadow:0 10px 35px rgba(96,165,250,.18);
+      opacity:.95;
+    }
 
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.mark{
-  width:46px;height:46px;border-radius:16px;
-  background:linear-gradient(135deg, rgba(14,165,233,1), rgba(139,92,246,1));
-  box-shadow:0 18px 35px rgba(14,165,233,.22);
-  display:grid;place-items:center;
-  color:#fff;font-weight:1000;
-  position:relative;overflow:hidden;
-}
-.mark:after{
-  content:"";
-  position:absolute;inset:-30px;
-  background:radial-gradient(circle at 25% 20%, rgba(255,255,255,.32), transparent 55%);
-  transform:rotate(12deg);
-}
-.brand-text{display:flex;flex-direction:column;min-width:0}
+    /* header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(12px);
+      background:rgba(7,10,18,.62);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+    }
 
-.logo-text{
-  font-size:24px;
-  font-weight:1000;
-  letter-spacing:1px;
-  line-height:1;
-  background:linear-gradient(90deg,var(--a),var(--b),var(--c));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  white-space:nowrap;
-}
-.brand-sub{
-  margin-top:4px;
-  font-size:13px;
-  color:var(--muted);
-  font-weight:650;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
+    /* BAFAW logo-like mark */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:240px;
+    }
+    .mark{
+      width:46px;height:46px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        radial-gradient(12px 12px at 30% 25%, rgba(255,255,255,.55), transparent 60%),
+        linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,211,238,.85), rgba(52,211,153,.75));
+      box-shadow:0 18px 40px rgba(96,165,250,.20);
+      overflow:hidden;
+    }
+    .mark span{
+      font-weight:1000;
+      letter-spacing:.08em;
+      font-size:13px;
+      color:rgba(7,10,18,.92);
+      text-transform:uppercase;
+    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-text b{font-size:14.5px;letter-spacing:-.2px}
+    .brand-text small{margin-top:4px;font-size:12.5px;color:var(--muted)}
 
-/* desktop nav */
-nav.nav{
-  display:none;
-  gap:18px;
-  align-items:center;
-  font-weight:850;
-}
-nav.nav a{color:rgba(15,23,42,.72)}
-nav.nav a:hover{color:rgba(15,23,42,1)}
-.cta{
-  padding:10px 14px;
-  border-radius:16px;
-  background:#fff;
-  border:1px solid rgba(14,165,233,.25);
-  box-shadow:0 14px 26px rgba(2,6,23,.08);
-}
+    nav.desktop{
+      display:none;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    nav.desktop a{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:var(--glass2);
+      color:rgba(236,242,255,.86);
+      font-weight:900;
+      font-size:13px;
+      transition:.15s ease;
+    }
+    nav.desktop a:hover{
+      transform:translateY(-1px);
+      border-color:rgba(96,165,250,.38);
+      background:rgba(96,165,250,.12);
+    }
+    .nav-cta{
+      border:none !important;
+      color:rgba(7,10,18,.92) !important;
+      background:linear-gradient(135deg, rgba(96,165,250,.95), rgba(52,211,153,.80)) !important;
+      box-shadow:0 18px 40px rgba(96,165,250,.16);
+    }
 
-/* mobile menu button */
-.menu-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;height:44px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.92);
-  box-shadow:0 12px 24px rgba(2,6,23,.08);
-  cursor:pointer;
-}
-.burger{
-  width:20px;height:14px; position:relative;
-}
-.burger span{
-  position:absolute;left:0;right:0;
-  height:2px;border-radius:2px;
-  background:rgba(15,23,42,.80);
-  transition:transform .2s ease, top .2s ease, opacity .2s ease;
-}
-.burger span:nth-child(1){top:0}
-.burger span:nth-child(2){top:6px}
-.burger span:nth-child(3){top:12px}
+    /* mobile menu button */
+    .menu-btn{
+      width:44px;height:44px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:var(--glass2);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition:.15s ease;
+    }
+    .menu-btn:hover{transform:translateY(-1px)}
+    .menu-btn svg{opacity:.92}
 
-/* drawer */
-.drawer{
-  display:none;
-  border-top:1px solid var(--line);
-  background:rgba(255,255,255,.92);
-}
-.drawer.open{display:block}
-.drawer a{
-  display:block;
-  padding:14px 18px;
-  font-weight:900;
-  color:rgba(15,23,42,.78);
-  border-bottom:1px solid rgba(15,23,42,.06);
-}
-.drawer a:last-child{border-bottom:none}
-.drawer a.drawer-cta{
-  background:linear-gradient(135deg, rgba(14,165,233,.10), rgba(139,92,246,.10));
-}
+    /* drawer */
+    .backdrop{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      opacity:0;
+      pointer-events:none;
+      transition:.2s ease;
+      z-index:60;
+    }
+    .drawer{
+      position:fixed;
+      top:0; right:0;
+      height:100%;
+      width:min(360px, 88vw);
+      background:rgba(11,18,32,.92);
+      border-left:1px solid rgba(255,255,255,.12);
+      transform:translateX(110%);
+      transition:.22s ease;
+      z-index:70;
+      box-shadow:-20px 0 70px rgba(0,0,0,.45);
+      backdrop-filter:blur(12px);
+      display:flex;
+      flex-direction:column;
+      padding:16px;
+    }
+    .drawer.open{transform:translateX(0)}
+    .backdrop.open{opacity:1;pointer-events:auto}
+    .drawer-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .drawer-nav{
+      display:grid;
+      gap:10px;
+      padding:14px 0;
+    }
+    .drawer-nav a{
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      font-weight:950;
+      color:rgba(236,242,255,.90);
+    }
+    .drawer-nav a:hover{
+      border-color:rgba(96,165,250,.35);
+      background:rgba(96,165,250,.12);
+    }
+    .drawer-nav a.cta{
+      border:none;
+      color:rgba(7,10,18,.92);
+      background:linear-gradient(135deg, rgba(96,165,250,.95), rgba(52,211,153,.80));
+      box-shadow:0 18px 40px rgba(96,165,250,.15);
+    }
+    .drawer-note{
+      margin-top:auto;
+      color:rgba(236,242,255,.62);
+      font-size:12.5px;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:12px;
+      line-height:1.5;
+    }
 
-/* hero */
-.hero{padding:54px 0 24px}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:22px;
-  align-items:start;
-}
+    /* hero */
+    .hero{padding:30px 0 18px}
+    .hero-card{
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 450px at 15% 20%, rgba(96,165,250,.20), transparent 55%),
+        radial-gradient(700px 380px at 90% 25%, rgba(52,211,153,.14), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius:calc(var(--r) + 6px);
+      padding:clamp(18px,3vw,36px);
+      box-shadow:var(--shadow);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:start;
+    }
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      background:var(--glass2);
+      color:rgba(236,242,255,.86);
+      font-weight:900;
+      font-size:12.5px;
+    }
+    .dot{
+      width:9px;height:9px;border-radius:999px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      box-shadow:0 0 0 6px rgba(96,165,250,.14);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:clamp(28px,3.6vw,44px);
+      letter-spacing:-.7px;
+      line-height:1.08;
+    }
+    .lead{
+      margin:0 0 14px;
+      color:rgba(236,242,255,.76);
+      font-size:16px;
+      line-height:1.65;
+      max-width:64ch;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:12px 16px;
+      border-radius:16px;
+      font-weight:1000;
+      letter-spacing:.1px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      transition:.15s ease;
+      user-select:none;
+      text-decoration:none;
+    }
+    .btn-primary{
+      color:rgba(7,10,18,.92);
+      background:linear-gradient(135deg, rgba(96,165,250,.95), rgba(34,211,238,.85), rgba(52,211,153,.75));
+      box-shadow:0 18px 42px rgba(96,165,250,.18);
+    }
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{
+      color:rgba(236,242,255,.90);
+      background:var(--glass2);
+      border:1px solid var(--stroke);
+    }
+    .btn-ghost:hover{
+      transform:translateY(-1px);
+      border-color:rgba(96,165,250,.35);
+      background:rgba(96,165,250,.12);
+    }
 
-.kicker{
-  display:inline-flex;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.86);
-  border:1px solid var(--line);
-  font-weight:850;
-  font-size:13px;
-}
-.hero h1{
-  margin:14px 0 10px;
-  font-size:clamp(28px,5.2vw,48px);
-  letter-spacing:-.7px;
-  line-height:1.08;
-}
-.hero p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.75;
-  font-size:16px;
-  max-width:70ch;
-}
+    .side{
+      border:1px solid rgba(255,255,255,.12);
+      background:var(--glass2);
+      border-radius:var(--r);
+      padding:16px;
+      box-shadow:var(--shadow2);
+    }
+    .side h3{
+      margin:2px 0 12px;
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .pill-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    .pill{
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:rgba(236,242,255,.86);
+      font-weight:900;
+      font-size:13px;
+      line-height:1.2;
+    }
 
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-.btn{
-  padding:14px 18px;
-  border-radius:18px;
-  font-weight:950;
-  border:none;
-  cursor:pointer;
-  width:100%;
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-}
-.btn.primary{
-  color:#fff;
-  background:linear-gradient(135deg, var(--a), var(--b));
-  box-shadow:0 18px 40px rgba(14,165,233,.22);
-}
-.btn.soft{
-  background:rgba(255,255,255,.92);
-  border:1px solid var(--line);
-  box-shadow:0 14px 28px rgba(2,6,23,.08);
-}
+    /* sections */
+    section{padding:56px 0}
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-.4px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:80ch;
+      line-height:1.65;
+      font-size:14.5px;
+    }
 
-/* hero card */
-.panel{
-  background:var(--card);
-  border:1px solid rgba(15,23,42,.08);
-  border-radius:28px;
-  padding:20px;
-  box-shadow:var(--shadow);
-}
-.panel-top{
-  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
-  margin-bottom:12px;
-}
-.badge{
-  padding:8px 12px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid rgba(15,23,42,.10);
-  font-weight:950;
-}
-.badge.alt{
-  background:linear-gradient(90deg, rgba(34,197,94,.14), rgba(251,113,133,.10));
-}
-.pills{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-}
-.pill{
-  padding:10px 12px;
-  border-radius:16px;
-  background:#fff;
-  border:1px solid rgba(15,23,42,.10);
-  font-weight:850;
-  color:rgba(15,23,42,.82);
-}
+    .panel{
+      border:1px solid rgba(255,255,255,.12);
+      background:var(--glass2);
+      border-radius:var(--r);
+      padding:18px;
+      box-shadow:var(--shadow2);
+    }
 
-/* sections */
-section{padding:54px 0}
-.section-head h2{
-  margin:0 0 10px;
-  font-size:28px;
-  letter-spacing:-.4px;
-}
-.section-head p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.75;
-  max-width:85ch;
-}
-.alt-section{
-  background:rgba(255,255,255,.65);
-  border-top:1px solid rgba(15,23,42,.08);
-  border-bottom:1px solid rgba(15,23,42,.08);
-}
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      border-radius:var(--r2);
+      padding:16px;
+    }
+    .card h4{
+      margin:0 0 6px;
+      font-size:15px;
+      letter-spacing:-.2px;
+    }
+    .card p{
+      margin:0;
+      color:rgba(236,242,255,.74);
+      font-size:13.8px;
+      line-height:1.6;
+    }
 
-.grid-3{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-}
-.card{
-  background:#fff;
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow2);
-}
-.card h3{margin:0 0 8px}
-.card p{margin:0;color:var(--muted);line-height:1.7}
+    /* board */
+    .board{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .board-card{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      border-radius:18px;
+      padding:14px;
+    }
+    .role{
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(236,242,255,.62);
+      font-weight:1000;
+    }
+    .name{
+      margin-top:8px;
+      font-weight:1000;
+      letter-spacing:-.2px;
+      font-size:14px;
+    }
 
-/* board */
-.board{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-.member{
-  background:#fff;
-  border:1px solid rgba(15,23,42,.10);
-  border-radius:18px;
-  padding:14px;
-  box-shadow:0 14px 28px rgba(2,6,23,.10);
-}
-.role{
-  font-size:12px;
-  font-weight:950;
-  letter-spacing:.7px;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.name{margin-top:6px;font-weight:1000}
+    /* contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    label{
+      display:grid;
+      gap:6px;
+      margin-bottom:10px;
+      font-weight:900;
+      color:rgba(236,242,255,.90);
+      font-size:13px;
+    }
+    input,textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(7,10,18,.30);
+      color:var(--text);
+      outline:none;
+      font:inherit;
+    }
+    input:focus,textarea:focus{
+      border-color:rgba(96,165,250,.55);
+      box-shadow:0 0 0 4px rgba(96,165,250,.18);
+    }
+    textarea{min-height:120px;resize:vertical}
+    .hint{
+      color:rgba(236,242,255,.60);
+      font-size:12.5px;
+      line-height:1.5;
+      margin-top:10px;
+    }
 
-/* contact */
-.contact-grid{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-}
-label{font-weight:900}
-input,textarea{
-  width:100%;
-  margin-top:6px;
-  padding:12px 12px;
-  border-radius:14px;
-  border:1px solid rgba(15,23,42,.15);
-  background:rgba(255,255,255,.96);
-  font:inherit;
-  outline:none;
-}
-input:focus, textarea:focus{
-  border-color: rgba(14,165,233,.45);
-  box-shadow:0 0 0 4px rgba(14,165,233,.12);
-}
-.small{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.6}
+    footer{
+      padding:26px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      background:rgba(7,10,18,.45);
+      backdrop-filter:blur(10px);
+    }
+    .footer-inner{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .footer-links a{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:rgba(236,242,255,.76);
+      font-weight:900;
+      font-size:12.5px;
+    }
+    .footer-links a:hover{
+      border-color:rgba(96,165,250,.35);
+      background:rgba(96,165,250,.12);
+      color:rgba(236,242,255,.92);
+    }
+    .copyright{
+      color:rgba(236,242,255,.60);
+      font-size:12.5px;
+      margin-top:10px;
+      line-height:1.5;
+    }
 
-/* footer */
-footer{
-  background:rgba(255,255,255,.84);
-  border-top:1px solid rgba(15,23,42,.10);
-  padding:26px 0;
-}
-
-/* tablet */
-@media (min-width:768px){
-  .hero-grid{grid-template-columns:1.1fr .9fr}
-  .pills{grid-template-columns:1fr 1fr}
-  .grid-3{grid-template-columns:repeat(3,1fr)}
-  .board{grid-template-columns:repeat(3,1fr)}
-  .btn{width:auto}
-}
-
-/* desktop */
-@media (min-width:1024px){
-  nav.nav{display:flex}
-  .menu-btn{display:none}
-  .drawer{display:none !important}
-  .board{grid-template-columns:repeat(5,1fr)}
-  .contact-grid{grid-template-columns:1fr 1fr}
-}
-</style>
+    /* responsive */
+    @media (min-width:980px){
+      nav.desktop{display:flex}
+      .menu-btn{display:none}
+      .hero-grid{grid-template-columns:1.15fr .85fr}
+    }
+    @media (max-width:979px){
+      .hero-grid{grid-template-columns:1fr}
+      .pill-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .board{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:420px){
+      .brand{min-width:unset}
+      .mark{width:44px;height:44px;border-radius:16px}
+      .brand-text b{font-size:14px}
+      .brand-text small{font-size:12px}
+    }
+  </style>
 </head>
 
 <body>
-<div class="top-strip"></div>
+  <div class="top-strip"></div>
 
-<header>
-  <div class="container header-inner">
-    <div class="brand">
-      <div class="mark" aria-hidden="true">B</div>
-      <div class="brand-text">
-        <div class="logo-text">BAFAW</div>
-        <div class="brand-sub">Milwaukee Somali Bantu Community</div>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="BAFAW Home">
+        <div class="mark" aria-hidden="true"><span>BAFAW</span></div>
+        <div class="brand-text">
+          <b>BAFAW Milwaukee Somali Bantu Community</b>
+          <small>Nonprofit • Milwaukee, Wisconsin</small>
+        </div>
+      </a>
+
+      <nav class="desktop" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#board">Board</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="openMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-label="Mobile navigation">
+    <div class="drawer-top">
+      <div class="brand" style="min-width:unset">
+        <div class="mark" aria-hidden="true" style="width:42px;height:42px;border-radius:14px">
+          <span style="font-size:13px">BAFAW</span>
+        </div>
+        <div class="brand-text">
+          <b style="font-size:14px">BAFAW</b>
+          <small>Milwaukee Somali Bantu Community</small>
+        </div>
       </div>
+      <button class="menu-btn" id="closeMenu" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#board">Board</a>
-      <a class="cta" href="#contact">Contact</a>
+    <nav class="drawer-nav" aria-label="Mobile navigation links">
+      <a href="#about" class="close-on-click">About</a>
+      <a href="#programs" class="close-on-click">Programs</a>
+      <a href="#board" class="close-on-click">Board</a>
+      <a href="#contact" class="cta close-on-click">Contact</a>
     </nav>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-      <div class="burger" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
-    </button>
-  </div>
+    <div class="drawer-note">
+      Tip: Update the email in the Contact section when you’re ready.
+    </div>
+  </aside>
 
-  <div class="drawer" id="drawer">
-    <a class="drawer-link" href="#about">About</a>
-    <a class="drawer-link" href="#programs">Programs</a>
-    <a class="drawer-link" href="#board">Board</a>
-    <a class="drawer-link drawer-cta" href="#contact">Contact</a>
-  </div>
-</header>
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="badge"><span class="dot"></span> Serving the Somali Bantu community in Milwaukee</div>
 
-<main class="hero container" id="home">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">Serving the Somali Bantu community in Milwaukee</div>
-      <h1>Advocacy and community services that support families.</h1>
-      <p>
-        BAFAW is a Milwaukee-based nonprofit that provides human rights advocacy and social services,
-        including resettlement support, youth sports, family services, referrals, and community engagement.
-      </p>
+            <h1>Human rights advocacy and community services that strengthen families.</h1>
 
-      <div class="actions">
-        <a class="btn primary" href="#contact">Get Support</a>
-        <a class="btn soft" href="#programs">View Programs</a>
+            <p class="lead">
+              BAFAW provides trusted support for families and youth—resettlement navigation, referrals, sports programs,
+              family &amp; children services, and community-led advocacy that protects rights and promotes fair access.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Get Support</a>
+              <a class="btn btn-ghost" href="#programs">View Programs</a>
+            </div>
+          </div>
+
+          <aside class="side" aria-label="What we do">
+            <h3>What we do</h3>
+            <div class="pill-grid">
+              <div class="pill">Human Rights Advocacy</div>
+              <div class="pill">Resettlement Support</div>
+              <div class="pill">Community Services</div>
+              <div class="pill">Youth Sports</div>
+              <div class="pill">Family &amp; Children Services</div>
+              <div class="pill">Workshops &amp; Outreach</div>
+            </div>
+          </aside>
+        </div>
       </div>
     </div>
+  </main>
 
-    <aside class="panel">
-      <div class="panel-top">
-        <div class="badge">BAFAW</div>
-        <div class="badge alt">Milwaukee, WI</div>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About BAFAW</h2>
+        <p>
+          BAFAW is a Milwaukee-based nonprofit organization dedicated to supporting the Somali Bantu community through advocacy,
+          services, and community-led initiatives.
+        </p>
       </div>
 
-      <div class="pills">
-        <div class="pill">Human Rights Advocacy</div>
-        <div class="pill">Resettlement Support</div>
-        <div class="pill">Youth Sports</div>
-        <div class="pill">Family & Children Services</div>
-        <div class="pill">Community Referrals</div>
-        <div class="pill">Workshops & Outreach</div>
-      </div>
-
-      <p class="small">Need help today? Contact us and we’ll guide you to the right service.</p>
-    </aside>
-  </div>
-</main>
-
-<section id="about" class="container">
-  <div class="section-head">
-    <h2>About BAFAW</h2>
-    <p>
-      BAFAW (Milwaukee Somali Bantu Community) is a nonprofit organization dedicated to supporting the Somali Bantu
-      community through advocacy, services, and community-led initiatives.
-    </p>
-  </div>
-
-  <div class="grid-3">
-    <div class="card">
-      <h3>Mission</h3>
-      <p>Support and empower Somali Bantu families through advocacy and community services.</p>
-    </div>
-    <div class="card">
-      <h3>Vision</h3>
-      <p>A strong community with access to opportunity, resources, and fair treatment.</p>
-    </div>
-    <div class="card">
-      <h3>Values</h3>
-      <p>Service, unity, accountability, transparency, and respect.</p>
-    </div>
-  </div>
-</section>
-
-<section id="programs" class="alt-section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Programs & Services</h2>
-      <p>If you need help, contact us and we will guide you to the right service.</p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>Human Rights Advocacy</h3>
-        <p>Support, reporting help, referrals, and community education for rights protection and fair access.</p>
-      </div>
-      <div class="card">
-        <h3>Resettlement Support</h3>
-        <p>Guidance with resources, local referrals, interpretation support, and community navigation.</p>
-      </div>
-      <div class="card">
-        <h3>Community Services</h3>
-        <p>Case support, forms help, referrals, and connections to trusted local services.</p>
-      </div>
-      <div class="card">
-        <h3>Youth Sports</h3>
-        <p>Sports programs and mentorship that promote health, teamwork, and leadership.</p>
-      </div>
-      <div class="card">
-        <h3>Family & Children Support</h3>
-        <p>Family-focused support, children referrals, and youth wellbeing assistance.</p>
-      </div>
-      <div class="card">
-        <h3>Community Engagement</h3>
-        <p>Meetings, workshops, outreach, and partnerships that strengthen community voice.</p>
+      <div class="grid3">
+        <div class="card">
+          <h4>Mission</h4>
+          <p>To empower Somali Bantu families through advocacy, services, and programs that build opportunity and wellbeing.</p>
+        </div>
+        <div class="card">
+          <h4>Vision</h4>
+          <p>A safe, thriving, respected community where families have access to support and a strong voice.</p>
+        </div>
+        <div class="card">
+          <h4>Values</h4>
+          <p>Service, unity, integrity, transparency, and accountability in everything we do.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="board" class="container">
-  <div class="section-head">
-    <h2>Board & Leadership</h2>
-    <p>Our leadership team serves the community with responsibility and transparency.</p>
-  </div>
-
-  <div class="board">
-    <div class="member"><div class="role">President</div><div class="name">Mohamed Sidi</div></div>
-    <div class="member"><div class="role">Vice President</div><div class="name">Sheikh Abdishakur Ali</div></div>
-    <div class="member"><div class="role">Secretary</div><div class="name">Abdinasser Omar</div></div>
-    <div class="member"><div class="role">Executive Director</div><div class="name">Sheiknoor Adan</div></div>
-    <div class="member"><div class="role">Assistant Executive Director</div><div class="name">Nuurto Jeylani</div></div>
-    <div class="member"><div class="role">Treasury</div><div class="name">Anab Aden</div></div>
-    <div class="member"><div class="role">Program Coordinator</div><div class="name">Jafar Hussien</div></div>
-    <div class="member"><div class="role">Assistant Program Coordinator</div><div class="name">Mohamed Omar</div></div>
-    <div class="member"><div class="role">Family &amp; Children Coordinator</div><div class="name">Fatuma Sharif</div></div>
-    <div class="member"><div class="role">Spokesperson</div><div class="name">Muktar Hussien</div></div>
-  </div>
-</section>
-
-<section id="contact" class="alt-section">
-  <div class="container">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <p>Tell us what you need help with. We will respond as soon as possible.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="card">
-        <h3>Organization Info</h3>
-        <p><strong>Location:</strong> Milwaukee, Wisconsin</p>
-        <p><strong>Email:</strong> yourname@example.org</p>
-        <p><strong>Phone:</strong> (414) 000-0000</p>
-        <p class="small">Replace the email/phone with your real nonprofit contact info.</p>
+  <!-- PROGRAMS -->
+  <section id="programs">
+    <div class="container">
+      <div class="section-head">
+        <h2>Programs &amp; Services</h2>
+        <p>
+          We provide support across multiple areas. If you need help, contact us and we will guide you to the right service.
+        </p>
       </div>
 
-      <div class="card">
-        <h3>Send a message</h3>
-        <form onsubmit="return false;">
-          <label>Name
-            <input type="text" placeholder="Your name" />
-          </label>
-          <label>Email
-            <input type="email" placeholder="you@email.com" />
-          </label>
-          <label>Message
-            <textarea rows="4" placeholder="How can we help?"></textarea>
-          </label>
-          <button class="btn primary" style="width:100%" type="submit">Send Message</button>
-          <p class="small">This form is a demo. If you want, I can connect it to a real form that sends to your email.</p>
-        </form>
+      <div class="panel">
+        <div class="grid3">
+          <div class="card">
+            <h4>Human Rights Advocacy</h4>
+            <p>Support, referrals, and community education to protect civil rights and promote fair access.</p>
+          </div>
+          <div class="card">
+            <h4>Resettlement Support</h4>
+            <p>Guidance, local navigation, and connecting families to schools, housing resources, and community services.</p>
+          </div>
+          <div class="card">
+            <h4>Community Services</h4>
+            <p>Forms help, referrals, case support, and connecting families to trusted local providers.</p>
+          </div>
+          <div class="card">
+            <h4>Youth Sports</h4>
+            <p>Sports programs and mentorship promoting health, leadership, teamwork, and confidence.</p>
+          </div>
+          <div class="card">
+            <h4>Family &amp; Children Services</h4>
+            <p>Support and referrals for families, children, and youth wellbeing.</p>
+          </div>
+          <div class="card">
+            <h4>Community Engagement</h4>
+            <p>Outreach, workshops, partnerships, and community-led initiatives that strengthen community voice.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <p class="small" style="margin-top:14px;">
-      © <span id="y"></span> BAFAW – Milwaukee Somali Bantu Community
-    </p>
-  </div>
-</section>
+  <!-- BOARD -->
+  <section id="board">
+    <div class="container">
+      <div class="section-head">
+        <h2>Board &amp; Leadership</h2>
+        <p>Our leadership team serves the community with transparency, service, and accountability.</p>
+      </div>
 
-<footer>
-  <div class="container" style="display:flex;flex-direction:column;gap:8px;padding:18px 0;">
-    <strong>BAFAW – Milwaukee Somali Bantu Community</strong>
-    <div class="small">Nonprofit • Milwaukee, Wisconsin</div>
-  </div>
-</footer>
+      <div class="board" role="list">
+        <div class="board-card" role="listitem"><div class="role">President</div><div class="name">Mohamed Sidi</div></div>
+        <div class="board-card" role="listitem"><div class="role">Vice President</div><div class="name">Sheikh Abdishakur Ali</div></div>
+        <div class="board-card" role="listitem"><div class="role">Secretary</div><div class="name">Abdinasser Omar</div></div>
+        <div class="board-card" role="listitem"><div class="role">Executive Director</div><div class="name">Sheiknoor Adan</div></div>
+        <div class="board-card" role="listitem"><div class="role">Assistant Executive Director</div><div class="name">Nuurto Jeylani</div></div>
+        <div class="board-card" role="listitem"><div class="role">Treasury</div><div class="name">Anab Aden</div></div>
+        <div class="board-card" role="listitem"><div class="role">Program Coordinator</div><div class="name">Jafar Hussien</div></div>
+        <div class="board-card" role="listitem"><div class="role">Assistant Program Coordinator</div><div class="name">Mohamed Omar</div></div>
+        <div class="board-card" role="listitem"><div class="role">Family &amp; Children Coordinator</div><div class="name">Fatuma Sharif</div></div>
+        <div class="board-card" role="listitem"><div class="role">Spokesperson</div><div class="name">Muktar Hussien</div></div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // footer year
-  document.getElementById("y").textContent = new Date().getFullYear();
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Tell us what you need help with. We will respond as soon as possible.</p>
+      </div>
 
-  // mobile menu toggle
-  const btn = document.getElementById("menuBtn");
-  const drawer = document.getElementById("drawer");
+      <div class="contact-grid">
+        <div class="panel">
+          <div class="card" style="background:rgba(255,255,255,.04)">
+            <h4 style="margin:0 0 8px;">Organization Info</h4>
+            <p style="margin:0;color:rgba(236,242,255,.74);line-height:1.7;">
+              <b style="color:rgba(236,242,255,.92);">Location:</b> Milwaukee, Wisconsin<br/>
+              <b style="color:rgba(236,242,255,.92);">Phone:</b> <a href="tel:4142045297">414-204-5297</a><br/>
+              <b style="color:rgba(236,242,255,.92);">Email:</b> <span style="opacity:.9">yourname@example.org</span>
+            </p>
+            <div class="hint">Replace the email with your official nonprofit email anytime.</div>
+          </div>
+        </div>
 
-  function setOpen(open){
-    drawer.classList.toggle("open", open);
-    btn.setAttribute("aria-expanded", String(open));
-  }
+        <div class="panel">
+          <!-- No server needed (opens email app). Replace email below when ready. -->
+          <form action="mailto:yourname@example.org" method="post" enctype="text/plain">
+            <label>Name
+              <input name="name" placeholder="Your name" required />
+            </label>
+            <label>Email
+              <input name="email" type="email" placeholder="you@email.com" required />
+            </label>
+            <label>Message
+              <textarea name="message" placeholder="How can we help?" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit" style="width:100%;">Send Message</button>
+            <div class="hint">Tip: Update the <b>mailto</b> email to your real BAFAW inbox.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  btn.addEventListener("click", () => setOpen(!drawer.classList.contains("open")));
-  document.querySelectorAll(".drawer-link").forEach(link => link.addEventListener("click", () => setOpen(false)));
-  window.addEventListener("resize", () => { if (window.innerWidth >= 1024) setOpen(false); });
-</script>
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div style="font-weight:1000;letter-spacing:-.2px;">BAFAW Milwaukee Somali Bantu Community</div>
+        <div class="copyright">Nonprofit • Milwaukee, Wisconsin</div>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#board">Board</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year"></span> BAFAW. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // mobile drawer
+    const openBtn = document.getElementById("openMenu");
+    const closeBtn = document.getElementById("closeMenu");
+    const drawer = document.getElementById("drawer");
+    const backdrop = document.getElementById("backdrop");
+
+    function openDrawer(){
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+      openBtn.setAttribute("aria-expanded","true");
+      backdrop.setAttribute("aria-hidden","false");
+      document.body.style.overflow="hidden";
+    }
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      openBtn.setAttribute("aria-expanded","false");
+      backdrop.setAttribute("aria-hidden","true");
+      document.body.style.overflow="";
+    }
+
+    openBtn.addEventListener("click", openDrawer);
+    closeBtn.addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+
+    document.querySelectorAll(".close-on-click").forEach(a=>{
+      a.addEventListener("click", closeDrawer);
+    });
+
+    document.addEventListener("keydown",(e)=>{
+      if(e.key==="Escape") closeDrawer();
+    });
+  </script>
 </body>
 </html>
